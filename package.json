@@ -1,0 +1,24 @@
+{
+  "name": "monero-tx-scanner",
+  "version": "1.0.11",
+  "description": "Scan monero transactions to see whether they belong to a given view key and public address.",
+  "type": "module",
+  "keywords": [
+    "monero",
+    "scan",
+    "transaction",
+    "crypto",
+    "cryptocurrency"
+  ],
+  "author": "fatalglory",
+  "main": "index.js",
+  "homepage": "https://www.digitalcashtools.com",
+  "license": "ISC",
+  "dependencies": {
+    "biginteger": "^1.0.3",
+    "bn.js": "^5.2.0",
+    "buffer": "^6.0.3",
+    "elliptic": "^6.5.4",
+    "js-sha3": "^0.8.0"
+  }
+}
