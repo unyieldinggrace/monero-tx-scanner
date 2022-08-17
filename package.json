@@ -12,7 +12,7 @@
   ],
   "author": "fatalglory",
   "main": "index.js",
-  "homepage": "https://www.digitalcashtools.com",
+  "homepage": "https://github.com/unyieldinggrace/monero-tx-scanner",
   "license": "ISC",
   "dependencies": {
     "biginteger": "^1.0.3",
