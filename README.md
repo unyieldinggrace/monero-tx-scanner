@@ -13,6 +13,11 @@ It also detects and reports the amounts received.
 ### API
 This NPM package exports a single ES6 class `MoneroTXScanner`, with a single public method `GetOwnedOutputsFromTX`.
 
+Install with:
+```
+npm install monero-tx-scanner
+```
+
 Example usage:
 
 ```
