@@ -65,7 +65,19 @@ class MoneroTXScanner {
 	}
 
 	getOutputIsOwnedByTargetViewKey(attemptedDerivedPublicKey, TXData, outputIndex) {
-		return (attemptedDerivedPublicKey === TXData.vout[outputIndex].target.key);
+		return (attemptedDerivedPublicKey === this.getTargetKeyForOutput(TXData, outputIndex));
+	}
+
+	getTargetKeyForOutput(TXData, outputIndex) {
+		if (TXData.vout[outputIndex].target.key !== undefined) { // Pre August-2022 hard fork
+			return TXData.vout[outputIndex].target.key;
+		}
+
+		if (TXData.vout[outputIndex].target.tagged_key.key !== undefined) { // Post August-2022 hard fork, tagged_key includes a field for the view_tag
+			return TXData.vout[outputIndex].target.tagged_key.key;
+		}
+
+		throw "Target key not found for output with index "+outputIndex+", unrecognised transaction format.";
 	}
 
 	shouldGetAmountFromRCTData(TXData, outputIndex) {
